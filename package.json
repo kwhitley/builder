@@ -1,6 +1,6 @@
 {
   "name": "@supergeneric/builder",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "For faster, better building of apps.",
   "main": "index.js",
   "scripts": {
