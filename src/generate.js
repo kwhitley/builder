@@ -78,7 +78,7 @@ async function generate() {
   // final pass, install packages and release commands to user
   console.log('\nInstalling packages (this will take awhile)...')
 
-  cmd.get(exportPrefix + 'yarn', (err, data, stderr) => {
+  cmd.get('yarn', (err, data, stderr) => {
     console.log(chalk.gray(data))
 
     console.log('AVAILABLE COMMANDS')

@@ -1,11 +1,11 @@
 {
   "name": "@supergeneric/builder",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "For faster, better building of apps.",
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "release": "release --push --tag --public",
+    "release": "release --push --tag",
     "release:major": "yarn release - --major",
     "release:minor": "yarn release - --minor",
     "release:patch": "yarn release - --patch",
