@@ -1,0 +1,54 @@
+{
+  "name": "@supergeneric/builder",
+  "version": "0.0.1",
+  "description": "For faster, better building of apps.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "release": "release --push --tag",
+    "release:major": "yarn release - --major",
+    "release:minor": "yarn release - --minor",
+    "release:patch": "yarn release - --patch",
+    "release:next": "yarn release - --type=next",
+    "release:alpha": "yarn release - --type=alpha"
+  },
+  "bin": {
+    "dev": "./src/dev.js",
+    "build": "./src/build.js",
+    "generate": "./src/generate.js",
+    "sync": "./src/sync.js"
+  },
+  "author": "Kevin R. Whitley <krwhitley@gmail.com>",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/supergeneric/adk-builder.git"
+  },
+  "bugs": {
+    "url": "https://github.com/supergeneric/adk-builder/issues",
+    "email": "krwhitley@gmail.com"
+  },
+  "dependencies": {
+    "chai": "^4.2.0",
+    "chalk": "^2.4.2",
+    "cross-env": "^5.2.0",
+    "dotenv": "^7.0.0",
+    "fs-extra": "^7.0.1",
+    "fuse-box": "^3.7.1",
+    "fuse-test-runner": "^1.0.16",
+    "globby": "^9.2.0",
+    "node-cmd": "^3.0.0",
+    "node-sass": "^4.12.0",
+    "react-hot-loader": "^4.8.4",
+    "terser": "^3.17.0",
+    "typescript": "^3.4.5",
+    "user-home": "^2.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "jest": "^24.8.0",
+    "yarn-release": "^1.10.2"
+  }
+}

@@ -1,0 +1,3 @@
+{
+  "static-files": "will be copied directly from the src/client/public folder, and available under the root /public path once the server has started"
+}

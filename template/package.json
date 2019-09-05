@@ -1,0 +1,26 @@
+{
+  "name": "@supergeneric app",
+  "version": "0.1.0",
+  "description": "Your description goes here",
+  "title": "@supergeneric App v${version}",
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "main": "dist/server.js",
+  "target": "esnext",
+  "scripts": {
+    "start": "node dist/server.js",
+    "build": "build",
+    "dev": "dev",
+    "sync": "sync"
+  },
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@supergeneric/express": "^1.2.4",
+    "@reach/router": "^1.2.1",
+    "classnames": "^2.2.6",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  }
+}

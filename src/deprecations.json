@@ -1,0 +1,20 @@
+{
+  "@arundo/spa-builder": {
+    "replacement": "@arundo/adk-builder"
+  },
+  "@arundo/react-shell": {
+    "replacement": "@arundo/adk-react"
+  },
+  "@arundo/react-auth": {
+    "replacement": "@arundo/adk-react",
+    "example": "import { useAuth } from '@arundo/adk-react/auth'"
+  },
+  "@arundo/react-data-hooks": {
+    "replacement": "@arundo/adk-react",
+    "example": "import { createDataHook } from '@arundo/adk-react/hooks'"
+  },
+  "@arundo/express-starter": {
+    "replacement": "@arundo/adk-express",
+    "example": "import express from '@arundo/adk-express'"
+  }
+}
