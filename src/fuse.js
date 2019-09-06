@@ -28,7 +28,7 @@ const defaultOptions = fs.readJsonSync(`${__dirname}/defaults.config.json`, { th
 const userOptionsRC = fs.readJsonSync(`${ROOT_PATH}/.builderrc`, { throws: false }) || {}
 const userOptionsJSON = fs.readJsonSync(`${ROOT_PATH}/builder.config.json`, { throws: false }) || {}
 const userOptions = deepmerge(userOptionsRC, userOptionsJSON)
-const options = deepmerge(options, userOptions)
+const options = deepmerge(defaultOptions, userOptions)
 
 // display build options
 if (!isProduction) {
