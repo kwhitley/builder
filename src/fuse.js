@@ -23,10 +23,12 @@ const {
 const { DEV_BUILD_PATH, PROD_BUILD_PATH, pkg, ROOT_PATH, CLIENT_ROOT_URL } = require('./paths')
 const isProduction = process.env.NODE_ENV === 'production'
 
-// load options from .builderrc
+// load options from .builderrc ||
 const defaultOptions = fs.readJsonSync(`${__dirname}/defaults.config.json`, { throws: false }) || {}
-const userOptions = fs.readJsonSync(`${ROOT_PATH}/.builderrc`, { throws: false }) || {}
-const options = deepmerge(defaultOptions, userOptions)
+const userOptionsRC = fs.readJsonSync(`${ROOT_PATH}/.builderrc`, { throws: false }) || {}
+const userOptionsJSON = fs.readJsonSync(`${ROOT_PATH}/builder.config.json`, { throws: false }) || {}
+const userOptions = deepmerge(userOptionsRC, userOptionsJSON)
+const options = deepmerge(options, userOptions)
 
 // display build options
 if (!isProduction) {
