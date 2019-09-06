@@ -3,6 +3,7 @@ require('dotenv').config()
 
 const cmd = require('node-cmd')
 const fs = require('fs-extra')
+const chalk = require('chalk')
 const { src, task, exec, context } = require('fuse-box/sparky')
 const {
   FuseBox,
@@ -19,6 +20,20 @@ const {
   QuantumPlugin,
 } = require('fuse-box')
 const { DEV_BUILD_PATH, PROD_BUILD_PATH, pkg, ROOT_PATH, CLIENT_ROOT_URL } = require('./paths')
+const isProduction = process.env.NODE_ENV === 'production'
+
+// load options from .builderrc
+const options = fs.readJsonSync(`${ROOT_PATH}/.builderrc`, { throws: false }) || {}
+const {
+  aliases = {}
+} = options
+
+// display build options
+if (!isProduction) {
+  console.log(chalk.magenta(JSON.stringify({
+    aliases,
+  }, null, 2)))
+}
 
 const getPageTitle = (title, obj) => {
   let injections = title.match(/\$\{\w+\}/gi) || []
@@ -47,18 +62,7 @@ const clientEnv = () =>
 // console.log('CLIENT ENV', clientEnv())
 
 const clientConfig = (isProduction, basePath = DEV_BUILD_PATH) => ({
-  alias : {
-    'hooks': '~/client/hooks',
-    'images': '~/client/images',
-    'services': '~/client/services',
-    'utils': '~/client/utils',
-    'lib': '~/client/lib',
-    'components': '~/client/components',
-    'Common': '~/client/components/Common',
-    'Layout': '~/client/components/Layout',
-    'Pages': '~/client/components/Pages',
-    '~': '~/client',
-  },
+  alias: aliases,
   homeDir: `${ROOT_PATH}/src`,
   output: `${basePath}/client/$name.js`,
   useTypescriptCompiler: true,
