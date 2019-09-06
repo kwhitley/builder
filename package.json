@@ -1,6 +1,6 @@
 {
   "name": "@supergeneric/builder",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "For faster, better building of apps.",
   "main": "index.js",
   "scripts": {
@@ -32,6 +32,7 @@
     "chai": "^4.2.0",
     "chalk": "^2.4.2",
     "cross-env": "^5.2.0",
+    "deepmerge": "^4.0.0",
     "dotenv": "^7.0.0",
     "fs-extra": "^7.0.1",
     "fuse-box": "^3.7.1",
